@@ -13,6 +13,11 @@ defmodule Identicon do
 
   end
 
+  def mirrow_row(row) do
+    [first, second | _tail] = row
+    row ++ [second, first]
+  end
+
   def pick_color(%Identicon.Image{hex: [r, g, b | _tail]} = image) do
     %Identicon.Image{image | color: {r, g, b}}
   end
